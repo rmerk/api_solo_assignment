@@ -1,18 +1,6 @@
 var apikey = '83d5248efd58945b'; // API for wunderground
 
 $(document).ready(function($) {
-  $.ajax({
-  url : "http://api.wunderground.com/api/83d5248efd58945b/geolookup/conditions/q/MN/Andover.json",
-  crossDomain: true,
-  dataType : "jsonp",
-  success : function(parsed_json) {
-
-  var location = parsed_json['location']['city'];
-  var temp_f = parsed_json['current_observation']['temp_f'];
-  var $appendAPI = "Current temperature in " + location + " is: " + temp_f;
-
-  console.log($appendAPI);
-
   $.ajax('data.json', {
       success: function(response){
           console.log(response);
@@ -34,7 +22,4 @@ $(document).ready(function($) {
           alert(errorType + " " + errorMessage);
       }
   });//end ajax
-
-}//end parsed_json
-});//end ajax
 });//end documentReady
